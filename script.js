@@ -64,6 +64,8 @@ function checkInputs() {
   }
   if (tipSelected && !peopleValue && billValue) {
     errorBlock.classList.remove("hidden");
+    tipAmountEL.textContent = "$0.00";
+    totalAmountEl.textContent = "$0.00";
     return false;
   }
 }
