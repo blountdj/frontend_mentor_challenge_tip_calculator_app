@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main class="main">
+      <a
+        href="https://www.frontendmentor.io/profile/blountdj"
+        class="avatar--a"
+        target="_blank"
+        ><img
+          src="https://avatars.githubusercontent.com/u/24497816?v=4"
+          alt="frontend mentor avatar"
+          class="avatar--img"
+          title="frontend mentor profile"
+      /></a>
+      <img src="images/logo.svg" alt="logo" class="logo" />
+      <section class="calculator">
+        <div class="inputs">
+          <div class="inputs__bill">
+            <div class="inputs__bill--text inputs--text">Bill</div>
+            <input
+              type="text"
+              class="inputs__bill--input input"
+              placeholder="0"
+            />
+          </div>
+
+          <div class="inputs__tip">
+            <div class="inputs__tip--text inputs--text">Select Tip %</div>
+            <div class="inputs__tip--buttons">
+              <button class="button tip__button" data-percentage="5">5%</button>
+              <button class="button tip__button" data-percentage="10">
+                10%
+              </button>
+              <button class="button tip__button" data-percentage="15">
+                15%
+              </button>
+              <button class="button tip__button" data-percentage="25">
+                25%
+              </button>
+              <button class="button tip__button" data-percentage="50">
+                50%
+              </button>
+              <input
+                type="text"
+                class="input input--custom"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+
+          <div class="inputs__people hidden">
+            <div class="inputs__people--wrapper">
+              <div class="inputs__people--text inputs--text">
+                Number of People
+              </div>
+              <div class="inputs__people--error">Can't be zero</div>
+            </div>
+            <input
+              type="text"
+              class="inputs__people--input input"
+              placeholder="0"
+            />
+          </div>
+        </div>
+
+        <div class="outputs">
+          <div class="outputs__wrapper">
+            <p class="outputs__tip--text output--text">Tip Amount</p>
+            <p class="outputs__tip--subtext output--subtext">/ person</p>
+            <h1 class="outputs__tip--amount output--answer">$0.00</h1>
+          </div>
+
+          <div class="outputs__wrapper">
+            <p class="outputs__total--text output--text">Total</p>
+            <p class="outputs__total--subtext output--subtext">/ person</p>
+            <h1 class="outputs__total--amount output--answer">$0.00</h1>
+          </div>
+
+          <button class="outputs__reset button button--reset">Reset</button>
+        </div>
+      </section>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Darren Blount</a>.
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+.button {
+  background-color: $color-very-dark-cyan;
+  color: $color-white;
+  font-family: "Space Mono", monospace;
+  font-size: 2.8rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-strong-cyan;
+    color: $color-very-dark-cyan;
+  }
+
+  &--custom {
+    background-color: $color-very-light-grayish-cyan;
+    color: $color-dark-grayish-cyan;
+  }
+
+  &--reset {
+    text-transform: uppercase;
+    background-color: $color-strong-cyan;
+    color: $color-very-dark-cyan;
+    opacity: 0.2;
+
+    &:hover {
+      opacity: 1;
+      filter: brightness(1.2);
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.selected {
+    color: $color-very-dark-cyan;
+    background-color: $color-strong-cyan;
+  }
+}

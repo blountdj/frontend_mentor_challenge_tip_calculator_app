@@ -1,0 +1,232 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/attributions";
+@import "components/avatar";
+@import "components/buttons";
+@import "components/logo";
+
+.main {
+  background-color: $color-light-grayish-cyan;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.calculator {
+  background-color: $color-white;
+  border-radius: 1.8rem;
+  padding: 3.5rem;
+  display: flex;
+  margin-bottom: 5rem;
+  width: 100rem;
+  display: flex;
+  gap: 3rem;
+  box-shadow: 0px 2px 20px 2px rgba(0, 0, 0, 0.14);
+  //   animation-name: calcMove;
+  //   animation-duration: 1.5s;
+  //   animation-timing-function: ease-out;
+  //   animation-name: calcFade;
+  //   animation-duration: 1.5s;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-right: 2rem;
+  width: 50%;
+  animation-name: inputMove;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.17, 0.67, 0.98, 1.34);
+
+  &--text {
+    color: $color-dark-grayish-cyan;
+    font-size: 1.6rem;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+  }
+
+  &__bill {
+    &--input {
+      background: url(../images/icon-dollar.svg);
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: 1rem;
+
+      font-size: 2.8rem;
+      padding-right: 10rem;
+    }
+  }
+
+  &__tip {
+    &--buttons {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 31.5%);
+      grid-template-rows: repeat(2, auto);
+      gap: 1.5rem;
+    }
+  }
+
+  &__people {
+    &--input.input {
+      background: url(../images/icon-person.svg);
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: 1rem;
+
+      font-size: 2.8rem;
+      padding-right: 1rem;
+      border: 1px solid red;
+      background-color: $color-very-light-grayish-cyan;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $color-strong-cyan;
+      }
+    }
+
+    &--wrapper {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    &--error {
+      color: red;
+      font-size: 1.6rem;
+      padding-bottom: 1rem;
+      opacity: 0.8;
+      //   top: 20px;
+      //   right: 0;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__people.hidden {
+    & .inputs__people--error {
+      opacity: 0;
+    }
+
+    & > input {
+      border: 1px solid $color-very-light-grayish-cyan;
+    }
+  }
+}
+
+.outputs {
+  background-color: $color-very-dark-cyan;
+  border-radius: 1.8rem;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 50%;
+  animation-name: outputMove;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.17, 0.67, 0.98, 1.34);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    padding-top: 1.5rem;
+  }
+
+  &__reset {
+    margin-top: auto;
+  }
+}
+
+.output {
+  &--text {
+    color: $color-white;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &--subtext {
+    color: $color-grayish-cyan;
+    font-size: 1.5rem;
+  }
+
+  &--answer {
+    color: $color-strong-cyan;
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+    text-align: right;
+    font-size: 4.8rem;
+    align-self: center;
+  }
+}
+
+.input {
+  width: 100%;
+  background-color: $color-very-light-grayish-cyan;
+  color: $color-very-dark-cyan;
+  border: 1px solid $color-very-light-grayish-cyan;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-family: "Space Mono", monospace;
+  text-align: right;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-strong-cyan;
+  }
+
+  &--custom {
+    font-size: 3rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 1020px) {
+  .calculator {
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .inputs {
+    width: 100%;
+  }
+
+  .outputs {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .inputs__tip--buttons {
+    grid-template-columns: repeat(2, 51%);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .outputs {
+    padding: 1.5rem;
+  }
+
+  .output--answer {
+    font-size: 3.6rem;
+  }
+
+  .inputs__people--input,
+  .inputs__bill--input {
+    width: 106%;
+  }
+}

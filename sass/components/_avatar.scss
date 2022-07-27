@@ -1,0 +1,19 @@
+.avatar {
+  &--a {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  &--img {
+    height: 5rem;
+    border-radius: 50%;
+    border: 2px solid $color-strong-cyan;
+    transition: all 0.2s;
+
+    &:hover {
+      // border: 1px solid $color-cyan;
+      box-shadow: 0px 0px 15px 0.3px rgba($color-strong-cyan, 0.5);
+    }
+  }
+}
